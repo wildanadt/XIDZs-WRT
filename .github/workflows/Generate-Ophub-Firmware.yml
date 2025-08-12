@@ -48,10 +48,6 @@ on:
           - Amlogic s922x GT-King-Pro
           - RK3318-BOX
           - Firefly-RK3328
-          - RK3528 H96-Max-M2
-          - RK3566 Panther-X2
-          - RK3568 NanoPi-R5S
-          - RK3588 Rock5B
           - RK3399 King3399
       tunnel:
         description: "Select Tunnel VPN"
@@ -133,10 +129,6 @@ jobs:
               "Amlogic s922x GT-King-Pro",
               "Firefly-RK3328",
               "RK3318-BOX",
-              "RK3528 H96-Max-M2",
-              "RK3566 Panther-X2",
-              "RK3568 NanoPi-R5S",
-              "RK3588 Rock5B",
               "RK3399 King3399"
             ]
           }
@@ -227,11 +219,6 @@ jobs:
             
             ## Rockchip Series
             - **RK3318**: RK3318-BOX
-            - **RK3328**: Firefly-RK3328
-            - **RK3528**: H96-Max-M2
-            - **RK3566**: Panther-X2
-            - **RK3568**: NanoPi-R5S
-            - **RK3588**: Rock5B
             - **RK3399**: King3399
                         
             ## FEATURES
