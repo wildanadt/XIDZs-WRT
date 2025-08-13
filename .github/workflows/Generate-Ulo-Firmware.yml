@@ -505,16 +505,3 @@ jobs:
           name: ${{ env.RELEASE_NAME }}
           files: ${{ env.WORKING_DIR }}/compiled_images/*.img.gz
           prerelease: ${{ github.ref_name == 'dev' }}
-      
-      - name: Wait before next build
-        if: steps.beforeupload.outputs.status == 'success'
-        run: |
-          echo "Build and upload completed for ${{ matrix.target }}"
-          echo "Waiting 6 minutes before next build starts..."
-          echo "Start time: $(date)"
-          
-          # Jeda 6 menit
-          sleep 360
-          
-          echo "Wait completed!"
-          echo "End time: $(date)"

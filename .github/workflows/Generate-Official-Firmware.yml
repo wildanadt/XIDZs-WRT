@@ -20,8 +20,12 @@ on:
         type: choice
         options:
           - all-device
+          - Nanopi-r2c
+          - Nanopi-r2c Plus
           - Nanopi-r2s
+          - Nanopi-r2s Plus
           - Nanopi-r3s
+          - Nanopi-r5s
           - Orangepi Pc 2
           - Orangepi R1 Plus
           - Orangepi R1 Plus LTS
@@ -86,7 +90,10 @@ jobs:
           TARGET_JSON=$(cat << 'EOJ'
           {
             "target": [
+              "Nanopi-r2c",
+              "Nanopi-r2c Plus",
               "Nanopi-r2s",
+              "Nanopi-r2s Plus",
               "Nanopi-r3s",
               "Orangepi Pc 2",
               "Orangepi R1 Plus",
@@ -266,8 +273,32 @@ jobs:
 
           # Target system configurations
           case "$MATRIXTARGET" in
+            "Nanopi-r2c")
+              echo "PROFILE=friendlyarm_nanopi-r2c" >> $GITHUB_ENV
+              echo "TARGET_SYSTEM=rockchip/armv8" >> $GITHUB_ENV
+              echo "TARGET_NAME=rockchip-armv8" >> $GITHUB_ENV
+              echo "ARCH_1=arm64" >> $GITHUB_ENV
+              echo "ARCH_2=aarch64" >> $GITHUB_ENV
+              echo "ARCH_3=aarch64_generic" >> $GITHUB_ENV
+              ;;
+            "Nanopi-r2c Plus")
+              echo "PROFILE=friendlyarm_nanopi-r2c-plus" >> $GITHUB_ENV
+              echo "TARGET_SYSTEM=rockchip/armv8" >> $GITHUB_ENV
+              echo "TARGET_NAME=rockchip-armv8" >> $GITHUB_ENV
+              echo "ARCH_1=arm64" >> $GITHUB_ENV
+              echo "ARCH_2=aarch64" >> $GITHUB_ENV
+              echo "ARCH_3=aarch64_generic" >> $GITHUB_ENV
+              ;;
             "Nanopi-r2s")
               echo "PROFILE=friendlyarm_nanopi-r2s" >> $GITHUB_ENV
+              echo "TARGET_SYSTEM=rockchip/armv8" >> $GITHUB_ENV
+              echo "TARGET_NAME=rockchip-armv8" >> $GITHUB_ENV
+              echo "ARCH_1=arm64" >> $GITHUB_ENV
+              echo "ARCH_2=aarch64" >> $GITHUB_ENV
+              echo "ARCH_3=aarch64_generic" >> $GITHUB_ENV
+              ;;
+            "Nanopi-r2s Plus")
+              echo "PROFILE=friendlyarm_nanopi-r2s-plus" >> $GITHUB_ENV
               echo "TARGET_SYSTEM=rockchip/armv8" >> $GITHUB_ENV
               echo "TARGET_NAME=rockchip-armv8" >> $GITHUB_ENV
               echo "ARCH_1=arm64" >> $GITHUB_ENV
@@ -385,6 +416,14 @@ jobs:
               echo "ARCH_1=arm64" >> $GITHUB_ENV
               echo "ARCH_2=aarch64" >> $GITHUB_ENV
               echo "ARCH_3=aarch64_cortex-a72" >> $GITHUB_ENV
+              ;;
+            "Raspberry Pi 5")
+              echo "PROFILE=rpi-5" >> $GITHUB_ENV
+              echo "TARGET_SYSTEM=bcm27xx/bcm2712" >> $GITHUB_ENV
+              echo "TARGET_NAME=bcm27xx-bcm2712" >> $GITHUB_ENV
+              echo "ARCH_1=arm64" >> $GITHUB_ENV
+              echo "ARCH_2=aarch64" >> $GITHUB_ENV
+              echo "ARCH_3=aarch64_cortex-a76" >> $GITHUB_ENV
               ;;
             "X86-64")
               echo "PROFILE=generic" >> $GITHUB_ENV
@@ -513,16 +552,3 @@ jobs:
           name: ${{ env.RELEASE_NAME }}
           files: ${{ env.WORKING_DIR }}/compiled_images/*.img.gz
           prerelease: ${{ github.ref_name == 'dev' }}
-      
-      - name: Wait before next build
-        if: steps.beforeupload.outputs.status == 'success'
-        run: |
-          echo "Build and upload completed for ${{ matrix.target }}"
-          echo "Waiting 8 minutes before next build starts..."
-          echo "Start time: $(date)"
-          
-          # Jeda 8 menit
-          sleep 480
-          
-          echo "Wait completed!"
-          echo "End time: $(date)"
