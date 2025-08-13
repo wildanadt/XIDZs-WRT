@@ -21,9 +21,7 @@ on:
         options:
           - all-device
           - Nanopi-r2c
-          - Nanopi-r2c Plus
           - Nanopi-r2s
-          - Nanopi-r2s Plus
           - Nanopi-r3s
           - Nanopi-r5s
           - Orangepi Pc 2
@@ -91,9 +89,7 @@ jobs:
           {
             "target": [
               "Nanopi-r2c",
-              "Nanopi-r2c Plus",
               "Nanopi-r2s",
-              "Nanopi-r2s Plus",
               "Nanopi-r3s",
               "Orangepi Pc 2",
               "Orangepi R1 Plus",
