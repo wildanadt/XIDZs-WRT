@@ -60,6 +60,7 @@
 
 <p align="center">
 <small>
+<a href="https://de-quenx.github.io/XIDZsWRT">Download XIDZsWRT Firmware</a><br>
 <a href="https://github.com/de-quenx/XIDZs-WRT/blob/main/LICENSE">LICENSE</a><br>
 <a href="https://github.com/rizkikotet-dev/RTA-WRT">RTA-WrtBuilder By RizkiKotet-Dev</a><br>
 <a href="https://github.com/frizkyiman/friWrt-MyWrtBuilder">friWrt-MyWrtBuilder By frizkyiman</a><br>
