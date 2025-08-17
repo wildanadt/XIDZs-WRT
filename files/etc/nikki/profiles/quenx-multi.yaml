@@ -1,7 +1,7 @@
 proxy-providers:
   MIX:
     type: file
-    path: "./proxy_provider/mix.yaml"
+    path: ./proxy_provider/mix.yaml
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -59,51 +59,51 @@ rule-providers:
   bankid:
     type: file
     behavior: domain
-    path: "./rule_provider/bankid.yaml"
+    path: ./rule_provider/bankid.yaml
   game:
     type: file
     behavior: classical
-    path: "./rule_provider/game.yaml"
+    path: ./rule_provider/game.yaml
   portgame:
     type: file
     behavior: classical
-    path: "./rule_provider/portgame.yaml"
+    path: ./rule_provider/portgame.yaml
   umum:
     type: file
     behavior: classical
-    path: "./rule_provider/umum.yaml"
+    path: ./rule_provider/umum.yaml
   whatsapp:
     type: file
     behavior: classical
-    path: "./rule_provider/whatsapp.yaml"
+    path: ./rule_provider/whatsapp.yaml
   youtube:
     type: file
     behavior: classical
-    path: "./rule_provider/youtube.yaml"
+    path: ./rule_provider/youtube.yaml
   fb:
     type: file
     behavior: classical
-    path: "./rule_provider/fb.yaml"
+    path: ./rule_provider/fb.yaml
   meta:
     type: file
     behavior: classical
-    path: "./rule_provider/meta.yaml"
+    path: ./rule_provider/meta.yaml
   ig:
     type: file
     behavior: classical
-    path: "./rule_provider/ig.yaml"
+    path: ./rule_provider/ig.yaml
   line:
     type: file
     behavior: classical
-    path: "./rule_provider/line.yaml"
+    path: ./rule_provider/line.yaml
   netflix:
     type: file
     behavior: classical
-    path: "./rule_provider/netflix.yaml"
+    path: ./rule_provider/netflix.yaml
   tiktok:
     type: file
     behavior: classical
-    path: "./rule_provider/tiktok.yaml"
+    path: ./rule_provider/tiktok.yaml
 rules:
 - RULE-SET,whatsapp,WHATSAPP
 - RULE-SET,line,FB-IG-LINE
@@ -120,12 +120,12 @@ rules:
 - MATCH,SERVER-UMUM
 dns:
   proxy-server-nameserver:
-    - 112.215.203.246 # DNS XL
-    - 112.215.203.247 # DNS XL
-    - 112.215.203.248 # DNS XL
-    - 112.215.203.254 # DNS XL
-    - 112.215.198.248 # DNS XL
-    - 112.215.198.254 # DNS XL
+    - 112.215.203.246
+    - 112.215.203.247
+    - 112.215.203.248
+    - 112.215.203.254
+    - 112.215.198.248
+    - 112.215.198.254
   nameserver:
     - 1.1.1.1
     - 8.8.8.8
