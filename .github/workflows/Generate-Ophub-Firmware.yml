@@ -401,25 +401,25 @@ jobs:
               ;;
             "Amlogic s905x B860H")
               TARGET_BUILD="s905x-b860h"
-              KERNEL="5.15.y_6.1.y_6.6.y_6.12.y"
+              KERNEL="5.15.y_6.1.y_6.6.y"
               echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
               echo "KERNEL=$KERNEL" >> $GITHUB_ENV
               ;;
             "Amlogic s905x B860H MODSDCARD")
               TARGET_BUILD="s905x-b860h"
-              KERNEL="5.15.y_6.1.y_6.6.y_6.12.y"
+              KERNEL="5.15.y_6.1.y_6.6.y"
               echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
               echo "KERNEL=$KERNEL" >> $GITHUB_ENV
               ;;
             "Amlogic s905x HG680P")
               TARGET_BUILD="s905x"
-              KERNEL="5.15.y_6.1.y_6.6.y_6.12.y"
+              KERNEL="5.15.y_6.1.y_6.6.y"
               echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
               echo "KERNEL=$KERNEL" >> $GITHUB_ENV
               ;;
             "Amlogic s905x HG680P MODSDCARD")
               TARGET_BUILD="s905x"
-              KERNEL="5.15.y_6.1.y_6.6.y_6.12.y"
+              KERNEL="5.15.y_6.1.y_6.6.y"
               echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
               echo "KERNEL=$KERNEL" >> $GITHUB_ENV
               ;;
@@ -479,7 +479,7 @@ jobs:
               ;;
             "Amlogic s905x4 Advan-At01_Ax810")
               TARGET_BUILD="s905x4-advan"
-              KERNEL="6.1.y_6.6.y_6.12.y"
+              KERNEL="6.1.y_6.6.y"
               echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
               echo "KERNEL=$KERNEL" >> $GITHUB_ENV
               ;;
