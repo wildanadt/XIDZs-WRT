@@ -1,18 +1,18 @@
 proxy-providers:
   ID:
     type: file
-    path: ./proxy_provider/id.yaml
+    path: "./proxy_provider/id.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 180
+      interval: 120
   MIX:
     type: file
-    path: ./proxy_provider/mix.yaml
+    path: "./proxy_provider/mix.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 180
+      interval: 120
 proxy-groups:
 - name: AUTO-ID-MIX
   type: fallback
@@ -21,7 +21,7 @@ proxy-groups:
   - ID
   - MIX
   url: http://www.gstatic.com/generate_204
-  interval: 180
+  interval: 120
 - name: LB-MIX-ID
   type: load-balance
   strategy: consistent-hashing
@@ -30,7 +30,7 @@ proxy-groups:
   - MIX
   - ID
   url: http://www.gstatic.com/generate_204
-  interval: 180
+  interval: 120
 - name: SERVER-UMUM
   type: select
   disable-udp: false
@@ -58,39 +58,39 @@ rule-providers:
   Game:
     type: file
     behavior: classical
-    path: ./rule_provider/game.yaml
+    path: "./rule_provider/game.yaml"
   PortGame:
     type: file
     behavior: classical
-    path: ./rule_provider/portgame.yaml
+    path: "./rule_provider/portgame.yaml"
   Umum:
     type: file
     behavior: classical
-    path: ./rule_provider/umum.yaml
+    path: "./rule_provider/umum.yaml"
   indo:
     type: file
     behavior: classical
-    path: ./rule_provider/indo.yaml
+    path: "./rule_provider/indo.yaml"
   Sosmed:
     type: file
     behavior: classical
-    path: ./rule_provider/sosmed.yaml
+    path: "./rule_provider/sosmed.yaml"
   Streaming:
     type: file
     behavior: classical
-    path: ./rule_provider/streaming.yaml
+    path: "./rule_provider/streaming.yaml"
   Bankid:
     type: file
     behavior: domain
-    path: ./rule_provider/bankid.yaml
+    path: "./rule_provider/bankid.yaml"
   Tiktok:
     type: file
     behavior: domain
-    path: ./rule_provider/tiktok.yaml
+    path: "./rule_provider/tiktok.yaml"
   Meta:
     type: file
     behavior: domain
-    path: ./rule_provider/meta.yaml
+    path: "./rule_provider/meta.yaml"
 rules:
 - RULE-SET,Umum,SERVER-UMUM
 - RULE-SET,Game,SERVER-GAME
