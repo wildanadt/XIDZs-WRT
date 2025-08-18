@@ -1,6 +1,6 @@
 #!/bin/sh /etc/rc.common
 
-START=07
+START=06
 
 boot() {
     rm -f /var/run/*.pid
