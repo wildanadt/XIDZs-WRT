@@ -229,7 +229,7 @@ sed -i -e 's/\[ -f \/etc\/banner \] && cat \/etc\/banner/#&/' -e 's/\[ -n \"\$FA
 chmod -R +x /sbin /usr/bin 2>/dev/null
 chmod -R +x /etc/init.d 2>/dev/null
 chmod 600 /etc/vnstat.conf 2>/dev/null
-chmod +x /etc/hotplug.d/usb/23-modem-detect 2>/dev/null
+chmod +x /etc/hotplug.d/usb/21-modem_detect 2>/dev/null
 chmod +x /usr/lib/ModemManager/connection.d/10-report-down 2>/dev/null
 chmod +x /www/cgi-bin/reset-vnstat.sh /www/vnstati/vnstati.sh 2>/dev/null
 
