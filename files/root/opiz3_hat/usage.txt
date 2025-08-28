@@ -1,0 +1,6 @@
+# credit mbah wisnu
+# untuk opiz3 + hat
+- pindahkan kedua file ke /etc/hotplug.d/usb/
+- set permission 755 kedua file ini
+- lalu hapus file 21-modem_detect
+- reboot devices
