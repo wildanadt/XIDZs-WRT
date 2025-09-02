@@ -76,7 +76,7 @@ PACKAGES+=" php8 php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-
 
 # Misc Packages + Custom Packages
 MISC+=" zoneinfo-core zoneinfo-asia jq httping adb openssh-sftp-server zram-swap htop \
-screen lolcat atc-fib-l850_gl atc-fib-fm350_gl luci-proto-atc luci-app-mmconfig luci-app-droidnet luci-app-ipinfo \
+screen lolcat atc-fib-l850_gl atc-fib-fm350_gl luci-proto-atc luci-proto-xmm luci-app-mmconfig luci-app-droidnet luci-app-ipinfo \
 luci-app-lite-watchdog luci-app-mactodong luci-app-poweroffdevice luci-app-ramfree luci-app-tinyfm luci-app-ttyd luci-app-3ginfo-lite"
 
 # Profil Name
@@ -95,7 +95,7 @@ configure_profile_packages() {
         PACKAGES+=" luci-app-amlogic btrfs-progs kmod-fs-btrfs"
         EXCLUDED+=" -procd-ujail"
     elif [[ "${TYPE:-}" == "ULO" ]]; then
-        PACKAGES+=" luci-app-amlogic"
+        PACKAGES+=" luci-app-amlogic btrfs-progs kmod-fs-btrfs"
         EXCLUDED+=" -procd-ujail"
     fi
 }
