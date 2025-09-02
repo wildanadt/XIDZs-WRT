@@ -32,20 +32,34 @@ proxy-groups:
   - AUTO-MIX
   - SELECT
   - DIRECT
+- name: PORT-GAME
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - SELECT
 rule-providers:
   Game:
     type: file
     behavior: classical
     path: "./rule_provider/game.yaml"
-  PortGame:
+  PortGames:
     type: file
     behavior: classical
-    path: "./rule_provider/portgame.yaml"
+    path: "./rule_provider/portgames.yaml"
+  PortTcp:
+    type: file
+    behavior: classical
+    path: "./rule_provider/PortTCP.yaml"
+  PortUdp:
+    type: file
+    behavior: classical
+    path: "./rule_provider/PortUDP.yaml"
   Umum:
     type: file
     behavior: classical
     path: "./rule_provider/umum.yaml"
-  indo:
+  Indo:
     type: file
     behavior: classical
     path: "./rule_provider/indo.yaml"
@@ -72,8 +86,10 @@ rule-providers:
 rules:
 - RULE-SET,Umum,SERVER-UMUM
 - RULE-SET,Game,SERVER-GAME
-- RULE-SET,PortGame,SERVER-GAME
-- RULE-SET,indo,SERVER-UMUM
+- RULE-SET,PortGames,PORT-GAME
+- RULE-SET,PortTcp,PORT-GAME
+- RULE-SET,PortUdp,PORT-GAME
+- RULE-SET,Indo,SERVER-UMUM
 - RULE-SET,Sosmed,SERVER-UMUM
 - RULE-SET,Streaming,SERVER-UMUM
 - RULE-SET,Bankid,SERVER-UMUM
