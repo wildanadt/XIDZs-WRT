@@ -26,7 +26,7 @@ PACKAGES+=" kmod-mii kmod-usb-net kmod-usb-wdm kmod-usb-net-rndis kmod-usb-net-c
 kmod-usb-net-qmi-wwan uqmi luci-proto-qmi kmod-usb-acm kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-mbim umbim \
 kmod-usb-serial-option kmod-usb-serial kmod-usb-serial-wwan kmod-usb-serial-qualcomm kmod-usb-serial-sierrawireless modemmanager luci-proto-modemmanager \
 mbim-utils qmi-utils usbutils luci-proto-ncm kmod-usb-uhci kmod-usb-ohci kmod-usb2 kmod-usb3 \
-usb-modeswitch xmm-modem kmod-nls-utf8 kmod-macvlan"
+usb-modeswitch xmm-modem luci-proto-xmm kmod-nls-utf8 kmod-macvlan"
 
 # Modem Management Tools
 PACKAGES+=" modeminfo luci-app-modeminfo atinout modemband luci-app-modemband sms-tool luci-app-sms-tool-js picocom minicom"
@@ -76,7 +76,7 @@ PACKAGES+=" php8 php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-
 
 # Misc Packages + Custom Packages
 MISC+=" zoneinfo-core zoneinfo-asia jq httping adb openssh-sftp-server zram-swap htop \
-screen lolcat atc-fib-l850_gl atc-fib-fm350_gl luci-proto-atc luci-proto-xmm luci-app-mmconfig luci-app-droidnet luci-app-ipinfo \
+screen lolcat atc-fib-l850_gl atc-fib-fm350_gl luci-proto-atc luci-app-mmconfig luci-app-droidnet luci-app-ipinfo \
 luci-app-lite-watchdog luci-app-mactodong luci-app-poweroffdevice luci-app-ramfree luci-app-tinyfm luci-app-ttyd luci-app-3ginfo-lite"
 
 # Profil Name
@@ -84,11 +84,11 @@ configure_profile_packages() {
     local profile_name="$1"
 
     if [[ "$profile_name" == "rpi-4" ]]; then
-        PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio"
+        PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio kmod-pcie_mhi quectel-CM-5G"
     elif [[ "$profile_name" == "rpi-5" ]]; then
-        PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio"
+        PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio kmod-pcie_mhi quectel-CM-5G"
     elif [[ "${ARCH_2:-}" == "x86_64" ]]; then
-        PACKAGES+=" kmod-iwlwifi iw-full pciutils wireless-tools"
+        PACKAGES+=" kmod-iwlwifi iw-full pciutils wireless-tools kmod-pcie_mhi quectel-CM-5G"
     fi
 
     if [[ "${TYPE:-}" == "OPHUB" ]]; then
