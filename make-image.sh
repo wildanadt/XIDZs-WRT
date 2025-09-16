@@ -88,7 +88,7 @@ configure_profile_packages() {
     elif [[ "$profile_name" == "rpi-5" ]]; then
         PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio kmod-pcie_mhi quectel-CM-5G"
     elif [[ "${ARCH_2:-}" == "x86_64" ]]; then
-        PACKAGES+=" kmod-iwlwifi iw-full pciutils wireless-tools kmod-pcie_mhi quectel-CM-5G"
+        PACKAGES+=" kmod-iwlwifi iw-full pciutils wireless-tools"
     fi
 
     if [[ "${TYPE:-}" == "OPHUB" ]]; then
