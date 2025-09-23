@@ -26,9 +26,6 @@ on:
           - Orangepi Pc 2
           - Orangepi R1 Plus
           - Orangepi R1 Plus LTS
-          - Orangepi Zero 2
-          - Orangepi Zero 3
-          - Orangepi Zero Plus
           - Raspberry Pi 2B
           - Raspberry Pi 3B
           - Raspberry Pi 4B
@@ -93,9 +90,6 @@ jobs:
               "Orangepi Pc 2",
               "Orangepi R1 Plus",
               "Orangepi R1 Plus LTS",
-              "Orangepi Zero 2",
-              "Orangepi Zero 3",
-              "Orangepi Zero Plus",
               "Raspberry Pi 2B",
               "Raspberry Pi 3B",
               "Raspberry Pi 4B",
