@@ -68,6 +68,7 @@ packages_custom+=(
     "luci-app-tailscale_|https://api.github.com/repos/asvow/luci-app-tailscale/releases/latest"
     #"luci-app-rakitanmanager_|https://api.github.com/repos/rtaserver/RakitanManager/releases/latest"
     "luci-app-ipinfo_|https://api.github.com/repos/bobbyunknown/luci-app-ipinfo/releases/latest"
+    "luci-app-netmonitor_|https://api.github.com/repos/de-quenx/luci-app-netmonitor/releases/latest"
 )
 
 if [[ "${TYPE}" == "OPHUB" || "${TYPE}" == "ULO" ]]; then
