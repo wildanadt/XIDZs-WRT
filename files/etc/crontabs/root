@@ -10,4 +10,4 @@
 #30 3 * * * ifdown fibocom && sleep 3 && ifup fibocom
 #0 */12 * * * /etc/init.d/vnstat_backup backup
 * */7 * * * /sbin/free.sh >/dev/null 2>&1
-*/5 * * * * /www/vnstati/vnstati.sh >/dev/null 2>&1
+*/5 * * * * /www/netmonitor/vnstati/vnstati.sh >/dev/null 2>&1
