@@ -81,7 +81,7 @@ configure_amlogic_permissions() {
         )
         
         for file in "${netifd_files[@]}"; do
-            sed -i "/# setup misc settings/ a\chmod +x $file" files/etc/uci-defaults/99-init-settings.sh
+            sed -i '229a\chmod +x $file' files/etc/uci-defaults/99-init-settings.sh
         done
         ;;
     *)
@@ -107,7 +107,7 @@ download_custom_scripts() {
     done
 }
 
-# Main execution
+# Main exeution
 main() {
     init_environment
     setup_base_config
