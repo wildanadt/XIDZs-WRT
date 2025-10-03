@@ -69,7 +69,7 @@ PACKAGES+=" tailscale luci-app-tailscale"
 PACKAGES+=" speedtest-cli luci-app-eqosplus"
 
 # Theme + UI
-PACKAGES+=" luci-theme-material luci-theme-argon luci-theme-alpha"
+PACKAGES+=" luci-theme-material luci-theme-argon luci-theme-alpha4"
 
 # PHP8
 PACKAGES+=" php8 php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-fileinfo php8-mod-zip php8-mod-iconv php8-mod-mbstring"
@@ -77,16 +77,16 @@ PACKAGES+=" php8 php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-
 # Misc Packages + Custom Packages
 MISC+=" zoneinfo-core zoneinfo-asia jq httping adb openssh-sftp-server zram-swap htop \
 screen lolcat atc-fib-l850_gl atc-fib-fm350_gl luci-proto-atc luci-app-mmconfig luci-app-droidnet luci-app-ipinfo \
-luci-app-lite-watchdog luci-app-mactodong luci-app-poweroffdevice luci-app-ramfree luci-app-tinyfm luci-app-ttyd luci-app-3ginfo-lite"
+luci-app-lite-watchdog luci-app-poweroffdevice luci-app-ramfree luci-app-tinyfm luci-app-ttyd luci-app-3ginfo-lite"
 
 # Profil Name
 configure_profile_packages() {
     local profile_name="$1"
 
     if [[ "$profile_name" == "rpi-4" ]]; then
-        PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio kmod-pcie_mhi quectel-CM-5G"
+        PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio" #kmod-pcie_mhi quectel-CM-5G"
     elif [[ "$profile_name" == "rpi-5" ]]; then
-        PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio kmod-pcie_mhi quectel-CM-5G"
+        PACKAGES+=" kmod-i2c-bcm2835 i2c-tools kmod-i2c-core kmod-i2c-gpio" #kmod-pcie_mhi quectel-CM-5G"
     elif [[ "${ARCH_2:-}" == "x86_64" ]]; then
         PACKAGES+=" kmod-iwlwifi iw-full pciutils wireless-tools"
     fi
