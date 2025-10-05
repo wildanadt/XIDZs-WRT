@@ -60,7 +60,7 @@ add_tunnel_packages() {
 PACKAGES+=" luci-app-diskman kmod-usb-storage kmod-usb-storage-uas ntfs-3g"
 
 # Monitoring
-PACKAGES+=" internet-detector internet-detector-mod-modem-restart luci-app-internet-detector vnstat2 vnstati2 luci-app-netmonitor"
+PACKAGES+=" internet-detector internet-detector-mod-modem-restart luci-app-internet-detector luci-app-netmonitor"
 
 # Remote Access
 PACKAGES+=" tailscale luci-app-tailscale"
@@ -69,7 +69,7 @@ PACKAGES+=" tailscale luci-app-tailscale"
 PACKAGES+=" speedtest-cli luci-app-eqosplus"
 
 # Theme + UI
-PACKAGES+=" luci-theme-material luci-theme-argon luci-theme-alpha4"
+PACKAGES+=" luci-theme-material luci-theme-argon"  #luci-theme-alpha4"
 
 # PHP8
 PACKAGES+=" php8 php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-fileinfo php8-mod-zip php8-mod-iconv php8-mod-mbstring"
