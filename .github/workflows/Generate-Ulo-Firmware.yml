@@ -32,6 +32,7 @@ on:
           - Amlogic HG680-FJ v1
           - Amlogic HG680-FJ v2
           - Amlogic HG680-FJ v3
+          - Amlogic Transvision-Gen2
           - Amlogic s905x4 v1
           - Amlogic s905x4 v2
           - Amlogic s905x4 v3
@@ -102,6 +103,7 @@ jobs:
               "Amlogic HG680-FJ v1",
               "Amlogic HG680-FJ v2",
               "Amlogic HG680-FJ v3",
+              "Amlogic Transvision-Gen2",
               "Amlogic s905x4 v1",
               "Amlogic s905x4 v2",
               "Amlogic s905x4 v3",
@@ -175,7 +177,7 @@ jobs:
             - Default WIFI password: XIDZs2025
             - Disarankan Reboot Devices Setelah Succes Boot
             ## Amlogic Series
-            - **S905X2**: HG680-FJ, B860Hv5  
+            - **S905X2**: HG680-FJ, B860Hv5, Transvision-Gen2  
             - **S905X4**: Akari Ax810, Advan AT01
             ## Allwinner Series
             - **H5**: Orange Pi Zero Plus2, Orange Pi Zero Plus
@@ -344,6 +346,12 @@ jobs:
                 KERNEL="6.4.11"
                 echo "KERNEL=$KERNEL" >> $GITHUB_ENV
                 TARGET_BUILD="s905x2-hg680-fj"
+                echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
+                ;;
+            "Amlogic Transvision-Gen2")
+                KERNEL="6.1.66-DBAI"
+                echo "KERNEL=$KERNEL" >> $GITHUB_ENV
+                TARGET_BUILD="s905x2-transvision-gen2"
                 echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
                 ;;
             "Amlogic s905x4 v1")
